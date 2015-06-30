@@ -13,9 +13,12 @@ The javaagent takes each method which has annotations such as Timed, Gauge, Coun
 Annotations instrumented include:
 
 ``Timed``  
+
 ``Counted``
+
 ``Gauge``              -->   Each class will have a gauge metric and all the methods are which have gauge annotation
                              will appear as sub labels underneath the class metric in the prometheus.
+                             
 ``ExceptionMetered``
 
 ## Running the java agent
