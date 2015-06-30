@@ -10,24 +10,24 @@ If you have dropwizard metrics being used for monitoring various kinds of inform
 
 The javaagent takes each method which has annotations such as Timed, Gauge, Counted, ExceptionMetered and inserts code specific to the prometheus where the different calculations are done and emitted to the port where prometheus scrapes the metric from. The prometheus java simple client is used to transform the codahale metrics into prometheus format.
 
-The metric names are taken as <I>classname.methodname.metricname<I>
+The metric names are taken as <I> classname.methodname.metricname </I>
 
 Annotations instrumented include:
 
-``Timed``  
+<I>``Timed``</I>
 
-``Counted``
+<I>``Counted``</I>
 
-``Gauge``              -->   Each class will have a gauge metric and all the methods are which have gauge annotation
-                             will appear as sub labels underneath the class metric in the prometheus.
+<I>``Gauge``              -->   Each class will have a gauge metric and all the methods are which have gauge annotation
+                             will appear as sub labels underneath the class metric in the prometheus.</I>
                              
-``ExceptionMetered``
+<I>``ExceptionMetered``</I>
 
 ## Running the java agent
 
-``mvn clean package`` will build the uber jar.
+<I>``mvn clean package``</I> will build the uber jar.
 
-``java -javaagent:/target/dropwizard-prometheus-0.0.1-SNAPSHOT.jar=prometheus.listener.port:1024\-cp target/agent-test-jar-with-dependencies.jar \<your-main-class>or<jar>`` will start the background jetty instance and starts reporting metrics to prometheus.
+<I>``java -javaagent:/target/dropwizard-prometheus-0.0.1-SNAPSHOT.jar=prometheus.listener.port:1024\-cp target/agent-test-jar-with-dependencies.jar \<your-main-class>or<jar>``</I> will start the background jetty instance and starts reporting metrics to prometheus.
 
 The listener port is a mandatory argument.
 
