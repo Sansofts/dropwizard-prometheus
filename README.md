@@ -27,7 +27,7 @@ Annotations instrumented include:
 
 <I>``mvn clean package``</I> will build the uber jar.
 
-<I>``java -javaagent:/target/dropwizard-prometheus-0.0.1-SNAPSHOT.jar=prometheus.listener.port:1024\-cp target/agent-test-jar-with-dependencies.jar \<your-main-class>or<jar>``</I> will start the background jetty instance and starts reporting metrics to prometheus.
+<I>``java -javaagent:/target/dropwizard-prometheus-0.0.1-SNAPSHOT.jar=prometheus.listener.port:1024\-cp '<path-to-your-class-files' \<your-main-class>or<jar>``</I> will start the background jetty instance and starts reporting metrics to prometheus.
 
 The listener port is a mandatory argument.
 
